@@ -1,0 +1,45 @@
+	<style>
+
+	  .leftSide {border-left: 3px solid orange}
+	  .topSide {border-top: 3px solid orange}
+	  
+		#container {height: 1000px;
+								width: 1000px;
+								background-image: url(imgres-3.jpg);
+		}
+	  
+	  #board {width: 600px;
+						margin-left: 400px;
+	  }
+	  #board > div {               /* // > sign means direct children*/
+	  	
+	  	border: 3px solid black;
+	    width: 190px;
+	    height: 190px;
+	    display: inline-block; /*this is what creates "board" appearance*/
+	  }
+
+		.a {
+			background-image: url(imagesTicTacToe/imgres.jpg);
+			background-size: 
+
+
+		}
+
+		.b {
+			background-image: url(imagesTicTacToe/imgres-1.jpg);
+			background-color: green;
+		}
+
+
+	</style>
+
+
+/*fix belichick
+border: 3px solid black;
+width: 190px;
+height: 155px;
+display: inline-block;
+background-position: no-repeat;
+background-size: 214;
+}*/

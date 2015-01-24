@@ -1,0 +1,129 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+	
+
+	<div id = "container">			
+	<div id="board"></div>
+	</div>
+
+
+		
+	
+	<script>
+
+	var player1turn; //typically var declarations up top of js
+  
+  var turn = 0;
+  var turnSelect = function() {
+  	turn++;
+  	console.log(turn);
+    if (turn % 2 == 1) {
+      player1turn = true;
+
+    } else {
+     
+      player1turn = false;
+    }
+  };
+
+
+
+  var board = document.getElementById('board'); //Select #board from our HTML and store it as a variable
+  for (var i = 0; i < 9; i++) { //Here we are saying "we are going to do the following ({}) 8 times then stop"
+    var newDiv = document.createElement('div'); //That 'the following' is create 8 new divs and store in the newDiv variable
+
+    newDiv.className = "cell"; // Each generated div now has a class name of cell! now we can call on cell.
+    newDiv.innerHTML = "&nbsp;";
+    // newDiv.setAttribute("data-info", i.toString()); //document.getElementByClassName(//"cell")[5].getAttribute("data-info");
+
+    board.appendChild(newDiv);
+	}
+  
+  var myCells = document.getElementsByClassName("cell"); //We are storing 
+  console.log (myCells);
+  for (var i = 0; i < myCells.length; i++) {
+    myCells[i].addEventListener('click', function() {
+    	turnSelect();
+      if (player1turn == true) {
+        this.classList.add("a");
+        
+        
+      } else {
+        
+    	  this.classList.add("b"); //statements have semicolons after them; 
+    	  
+
+      }
+    });
+  }
+
+  board.appendChild(newDiv); //We've generated the new divs out of thing air! Now we need to append them to our board.
+
+  newDiv.innerHTML = i; //i is counting 0-8; will place these numbers in the innerHTML and view
+
+
+
+  //turn selection // hoisting puts var and function declarations up top
+
+
+
+  //win condition
+
+  var winCondition = false;
+
+  var player1Win = function() {
+    winCondition = true;
+  }
+
+  var player2Win = function() {
+    winCondition = true;
+  }
+
+
+  //win logic
+
+  winningCombos = [
+    new Array(0, 1, 2),
+    new Array(3, 4, 5),
+    new Array(6, 7, 8),
+    new Array(0, 3, 6),
+    new Array(1, 4, 7),
+    new Array(2, 5, 8),
+    new Array(0, 4, 8),
+    new Array(2, 4, 6)
+  ];
+
+  var checkWin = function() {
+    winner = 0
+    for (i = 0; i < 8; i++) { //here we dive into each sub-array within our winningCombos parent array; we then look at each of three positions in those sub arrays; 
+      a = winningCombos[i][0]; 
+      b = winningCombos[i][1];
+      c = winningCombos[i][2];
+
+      if (cells[a].state == cells[b].state) { //by calling .state we are saying if position 1 state - be it 'x';'y' or blank - is equal in all three positions - we have a winner!
+        if (cells[b].state == cells[c].state)
+          if (cells[a].state != BLANK) {
+            winner = cells[a].state;
+          }
+      }
+    }
+    return winner;
+    console.log("We have a winner!")
+  };
+
+
+
+
+  // 		// images 
+  //   var images = {
+  // 	getElementById("x"),
+  // 	getElementById("y")
+  // }
+</script>
+
+</body>
