@@ -15,8 +15,9 @@
 	  	
 	  	border: 3px solid black;
 	    width: 190px;
-	    height: 190px;
+	    height: 155px;
 	    display: inline-block; /*this is what creates "board" appearance*/
+	    background-size: 214;
 	  }
 
 		.a {
@@ -35,11 +36,3 @@
 	</style>
 
 
-/*fix belichick
-border: 3px solid black;
-width: 190px;
-height: 155px;
-display: inline-block;
-background-position: no-repeat;
-background-size: 214;
-}*/
